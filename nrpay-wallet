@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NR Pay 站內轉帳</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        .login-box {
+            width: 300px;
+            padding: 40px;
+            border: 2px solid #fff;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .login-box h2 {
+            margin-bottom: 20px;
+        }
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #fff;
+            background-color: #222;
+            color: white;
+            font-size: 16px;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background-color: #444;
+        }
+        .functions {
+            display: none;
+            margin-top: 30px;
+        }
+        .functions button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        .functions button:hover {
+            background-color: #218838;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>NR Pay 登入</h2>
+        <input type="password" id="password" placeholder="輸入密碼" />
+        <button onclick="login()">登入</button>
+        <div class="error-message" id="error-message"></div>
+    </div>
+
+    <div class="functions" id="functions">
+        <button onclick="transfer()">轉帳</button>
+        <button onclick="withdraw()">提款</button>
+        <button onclick="recharge()">儲值</button>
+    </div>
+
+    <script>
+        let loginAttempts = 0;
+        const correctPassword = "123456"; // 設定正確密碼
+        const maxAttempts = 3;
+
+        function login() {
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (loginAttempts >= maxAttempts) {
+                errorMessage.textContent = "錯誤次數過多，請聯絡客服解鎖。";
+                return;
+            }
+
+            if (password === correctPassword) {
+                document.querySelector(".login-box").style.display = "none";
+                document.getElementById("functions").style.display = "block";
+            } else {
+                loginAttempts++;
+                errorMessage.textContent = `密碼錯誤！你還有 ${maxAttempts - loginAttempts} 次機會。`;
+            }
+        }
+
+        function transfer() {
+            alert("轉帳功能開發中");
+        }
+
+        function withdraw() {
+            alert("提款功能開發中");
+        }
+
+        function recharge() {
+            alert("儲值功能開發中");
+        }
+    </script>
+</body>
+</html>
