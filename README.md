@@ -3,54 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陳文聰的超屌專屬網站</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-size: 40px;
-            text-shadow: 3px 3px 10px red;
-        }
-        button {
-            font-size: 20px;
-            padding: 10px;
-            margin: 10px;
-            background-color: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: darkred;
-        }
-    </style>
+    <title>聰聰的全球粉絲後援會</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>🎉 歡迎來到陳文聰的粉絲後援會 🎉</h1>
-    <p>這裡紀錄了聰聰的所有黑歷史！</p>
+    <h1>🎉 歡迎來到聰聰的專屬網站 🎉</h1>
+    <h2>粉絲數：<span id="fans">999,999,999</span> 人（完全亂寫）</h2>
 
-    <button onclick="startPrank()">千萬別按</button>
-    <button onclick="startHackerEffect()">駭客入侵模式</button>
+    <button id="bomb-btn">💣 啟動倒數計時炸彈</button>
+    <button id="popup-btn">💥 無限彈窗模式</button>
+    <button id="mystery-btn">⚠️ 千萬別按</button>
+    <button id="hacker-btn">🕵️‍♂️ 假駭客入侵</button>
 
-    <script>
-        function startPrank() {
-            alert("恭喜你下載了聰聰的黑歷史！");
-            window.location.href = "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"; // 這裡換成聰聰的醜照網址
-        }
-
-        function startHackerEffect() {
-            document.body.innerHTML = "<h1 style='color:green;'>正在入侵聰聰的手機...</h1>";
-            setTimeout(() => {
-                document.body.innerHTML += "<p>正在下載他的密碼...</p>";
-            }, 2000);
-            setTimeout(() => {
-                document.body.innerHTML += "<p>破解失敗，聰聰太蠢，沒有密碼。</p>";
-            }, 4000);
-        }
-    </script>
+    <div id="countdown">倒數計時：10 秒</div>
+    <div id="hacker-screen" class="hidden">Connecting to 聰聰's iCloud...<br>Downloading Data...<br>Hacking in progress...</div>
 </body>
 </html>
