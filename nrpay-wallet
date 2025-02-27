@@ -3,116 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NR Pay 站內轉帳</title>
+    <title>陳文聰的超屌專屬網站</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0a0a0a;
+            background-color: black;
             color: white;
             text-align: center;
-            padding: 50px;
+            font-family: Arial, sans-serif;
         }
-        .login-box {
-            width: 300px;
-            padding: 40px;
-            border: 2px solid #fff;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.7);
+        h1 {
+            font-size: 40px;
+            text-shadow: 3px 3px 10px red;
         }
-        .login-box h2 {
-            margin-bottom: 20px;
-        }
-        .login-box input[type="password"] {
-            width: 100%;
+        button {
+            font-size: 20px;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #fff;
-            background-color: #222;
+            margin: 10px;
+            background-color: red;
             color: white;
-            font-size: 16px;
-        }
-        .login-box button {
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
             border: none;
-            color: white;
-            font-size: 16px;
             cursor: pointer;
         }
-        .login-box button:hover {
-            background-color: #444;
-        }
-        .functions {
-            display: none;
-            margin-top: 30px;
-        }
-        .functions button {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            border: none;
-            color: white;
-            font-size: 16px;
-            margin: 5px 0;
-            cursor: pointer;
-        }
-        .functions button:hover {
-            background-color: #218838;
-        }
-        .error-message {
-            color: red;
-            font-size: 14px;
+        button:hover {
+            background-color: darkred;
         }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h2>NR Pay 登入</h2>
-        <input type="password" id="password" placeholder="輸入密碼" />
-        <button onclick="login()">登入</button>
-        <div class="error-message" id="error-message"></div>
-    </div>
+    <h1>🎉 歡迎來到陳文聰的粉絲後援會 🎉</h1>
+    <p>這裡紀錄了聰聰的所有黑歷史！</p>
 
-    <div class="functions" id="functions">
-        <button onclick="transfer()">轉帳</button>
-        <button onclick="withdraw()">提款</button>
-        <button onclick="recharge()">儲值</button>
-    </div>
+    <button onclick="startPrank()">千萬別按</button>
+    <button onclick="startHackerEffect()">駭客入侵模式</button>
 
     <script>
-        let loginAttempts = 0;
-        const correctPassword = "123456"; // 設定正確密碼
-        const maxAttempts = 3;
-
-        function login() {
-            const password = document.getElementById("password").value;
-            const errorMessage = document.getElementById("error-message");
-
-            if (loginAttempts >= maxAttempts) {
-                errorMessage.textContent = "錯誤次數過多，請聯絡客服解鎖。";
-                return;
-            }
-
-            if (password === correctPassword) {
-                document.querySelector(".login-box").style.display = "none";
-                document.getElementById("functions").style.display = "block";
-            } else {
-                loginAttempts++;
-                errorMessage.textContent = `密碼錯誤！你還有 ${maxAttempts - loginAttempts} 次機會。`;
-            }
+        function startPrank() {
+            alert("恭喜你下載了聰聰的黑歷史！");
+            window.location.href = "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"; // 這裡換成聰聰的醜照網址
         }
 
-        function transfer() {
-            alert("轉帳功能開發中");
-        }
-
-        function withdraw() {
-            alert("提款功能開發中");
-        }
-
-        function recharge() {
-            alert("儲值功能開發中");
+        function startHackerEffect() {
+            document.body.innerHTML = "<h1 style='color:green;'>正在入侵聰聰的手機...</h1>";
+            setTimeout(() => {
+                document.body.innerHTML += "<p>正在下載他的密碼...</p>";
+            }, 2000);
+            setTimeout(() => {
+                document.body.innerHTML += "<p>破解失敗，聰聰太蠢，沒有密碼。</p>";
+            }, 4000);
         }
     </script>
 </body>
