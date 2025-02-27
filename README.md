@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>🎉 歡迎來到聰聰的專屬網站 🎉</h1>
-    <h2>粉絲數：<span id="fans">999,999,999</span> 人（完全亂寫）</h2>
+    <h2>粉絲數：<span id="fans">999,999,999</span> </h2>
 
     <button id="bomb-btn">💣 啟動倒數計時炸彈</button>
     <button id="popup-btn">💥 無限彈窗模式</button>
